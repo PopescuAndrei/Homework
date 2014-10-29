@@ -16,4 +16,9 @@
     <string name="et_hint_password">Password:</string>
     <string name="et_hint_email">Email:</string>
 
+    <!-- Homepage -->
+    <string name="btnSettings">Settings</string>
+    <string name="btnChangeBack">Change Background</string>
+    <string name="btnLogout">Logout</string>
+
 </resources>

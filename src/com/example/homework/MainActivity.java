@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(MainActivity.this, ActivityLogin.class));
+				finish();
 			}
 		});
 
@@ -36,6 +37,7 @@ public class MainActivity extends BaseActivity {
 			public void onClick(View v) {
 				startActivity(new Intent(MainActivity.this,
 						ActivityRegister.class));
+				finish();
 
 			}
 		});
