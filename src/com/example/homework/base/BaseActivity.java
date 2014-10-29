@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -89,5 +92,14 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
+	}
+
+	public boolean checkInternet() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+		if (ni == null) {
+			return false;
+		} else
+			return true;
 	}
 }

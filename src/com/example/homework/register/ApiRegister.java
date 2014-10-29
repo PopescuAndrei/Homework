@@ -35,7 +35,9 @@ public class ApiRegister extends BaseApiInterface {
 			if (error.equals("")) {
 				apiListener.onResponse(new ModelSuccessResponse());
 			} else {
-				apiListener.onResponse(new ModelFailureResponse());
+				ModelFailureResponse mfr = new ModelFailureResponse();
+				mfr.setDescription(error);
+				apiListener.onResponse(mfr);
 			}
 		}
 	}

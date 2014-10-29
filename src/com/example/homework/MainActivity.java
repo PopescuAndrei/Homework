@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.homework.base.BaseActivity;
-import com.example.homework.login.LoginActivity;
+import com.example.homework.login.ActivityLogin;
 import com.example.homework.register.ActivityRegister;
 
 public class MainActivity extends BaseActivity {
@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity {
 
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(MainActivity.this, LoginActivity.class));
+				startActivity(new Intent(MainActivity.this, ActivityLogin.class));
 			}
 		});
 

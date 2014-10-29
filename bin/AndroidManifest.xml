@@ -27,11 +27,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.homework.login.LoginActivity"
+            android:name="com.example.homework.login.ActivityLogin"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.example.homework.register.ActivityRegister"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.homework.home.ActivityHome"
             android:screenOrientation="portrait" >
         </activity>
     </application>
