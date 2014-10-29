@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Homework</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="noInternet">Please enable your Internet Connection!</string>
+
+    <!-- First Screen Strings // Should become a splashScreen -->
+    <string name="tvWelcome">Welcome!</string>
+    <string name="btnLogin">Log in</string>
+    <string name="btnRegister">Register</string>
+    <string name="tvOr">or</string>
+
+</resources>
