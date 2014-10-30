@@ -38,6 +38,14 @@
             android:name="com.example.homework.home.ActivityHome"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.example.homework.home.ActivitySettings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.homework.home.ActivityChangePassword"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

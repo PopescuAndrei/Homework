@@ -24,38 +24,45 @@ public final class R {
         public static final int button_text_size=0x7f050001;
     }
     public static final class drawable {
-        public static final int avatar_one=0x7f020000;
-        public static final int avatar_three=0x7f020001;
-        public static final int avatar_two=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
-        public static final int rounded_button=0x7f020004;
-        public static final int rounded_edittext=0x7f020005;
+        public static final int arrow_right=0x7f020000;
+        public static final int avatar_one=0x7f020001;
+        public static final int avatar_three=0x7f020002;
+        public static final int avatar_two=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int rounded_button=0x7f020005;
+        public static final int rounded_edittext=0x7f020006;
     }
     public static final class id {
-        public static final int avatarone=0x7f08000e;
-        public static final int avatarthree=0x7f080010;
-        public static final int avatartwo=0x7f08000f;
-        public static final int btnLoginLink=0x7f080009;
-        public static final int btnRegisterLink=0x7f08000b;
-        public static final int btn_accountSettings=0x7f080002;
-        public static final int btn_changeBg=0x7f080001;
-        public static final int btn_login=0x7f080006;
-        public static final int btn_logout=0x7f080003;
-        public static final int btn_register=0x7f08000d;
-        public static final int et_email=0x7f08000c;
-        public static final int et_password=0x7f080005;
-        public static final int et_username=0x7f080004;
-        public static final int mainLayout=0x7f080000;
-        public static final int rlOr=0x7f080008;
-        public static final int tvOr=0x7f08000a;
-        public static final int tvWelcome=0x7f080007;
+        public static final int btnLoginLink=0x7f08000d;
+        public static final int btnRegisterLink=0x7f08000f;
+        public static final int btn_accountSettings=0x7f080006;
+        public static final int btn_changeBg=0x7f080005;
+        public static final int btn_login=0x7f08000a;
+        public static final int btn_logout=0x7f080007;
+        public static final int btn_register=0x7f080011;
+        public static final int changeMailEt=0x7f080013;
+        public static final int changePasswordBtn=0x7f080003;
+        public static final int changePasswordEt=0x7f080014;
+        public static final int changeUserNameEt=0x7f080012;
+        public static final int et_email=0x7f080010;
+        public static final int et_password=0x7f080009;
+        public static final int et_username=0x7f080008;
+        public static final int mainLayout=0x7f080004;
+        public static final int newPassConfirmEt=0x7f080002;
+        public static final int newPassEt=0x7f080001;
+        public static final int oldPassEt=0x7f080000;
+        public static final int rlOr=0x7f08000c;
+        public static final int salveazaBtn=0x7f080015;
+        public static final int tvOr=0x7f08000e;
+        public static final int tvWelcome=0x7f08000b;
     }
     public static final class layout {
-        public static final int activity_home=0x7f030000;
-        public static final int activity_login=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_register=0x7f030003;
-        public static final int activity_settings=0x7f030004;
+        public static final int activity_change_password=0x7f030000;
+        public static final int activity_home=0x7f030001;
+        public static final int activity_login=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_register=0x7f030004;
+        public static final int activity_settings=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
@@ -66,12 +73,21 @@ public final class R {
         /**  Homepage 
          */
         public static final int btnSettings=0x7f06000a;
+        public static final int btn_account_change_password=0x7f060010;
+        public static final int btn_account_save_changes=0x7f06000e;
         public static final int et_hint_email=0x7f060009;
         public static final int et_hint_password=0x7f060008;
         /**  Register Screen Strings 
          */
         public static final int et_hint_username=0x7f060007;
         public static final int hello_world=0x7f060001;
+        public static final int hint_change_mail=0x7f06000f;
+        public static final int hint_new_password=0x7f060012;
+        public static final int hint_new_password_again=0x7f060013;
+        public static final int hint_old_password=0x7f060011;
+        /**  Settings 
+         */
+        public static final int hint_register_w_mail_second_name=0x7f06000d;
         public static final int noInternet=0x7f060002;
         public static final int tvOr=0x7f060006;
         /**  First Screen Strings // Should become a splashScreen 

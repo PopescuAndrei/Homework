@@ -1,5 +1,6 @@
 package com.example.homework.login;
 
+import com.example.homework.DBFields;
 import com.example.homework.base.BaseApiInterface;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
@@ -9,12 +10,13 @@ import com.parse.ParseUser;
 
 public class ApiLogin extends BaseApiInterface {
 
-	public void login(String username, String password) {
+	public void login(String username, final String password) {
 		ParseUser.logInInBackground(username, password, new LogInCallback() {
 
 			@Override
 			public void done(ParseUser user, ParseException e) {
 				if (e == null) {
+					DBFields.pass = password;
 					onLogin("");
 				} else {
 					String mess = e.getMessage();
