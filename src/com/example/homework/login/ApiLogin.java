@@ -10,6 +10,14 @@ import com.parse.ParseUser;
 
 public class ApiLogin extends BaseApiInterface {
 
+	/**
+	 * Takes the username and password as parameters, two Strings
+	 * Logs the user(in another thread) in the database
+	 * if no error is encounter it passes an empty string in onLogin(String error)
+	 * if an exception occurs , it passes the exception's message in onLogin(String error)
+	 * @param username
+	 * @param password
+	 */
 	public void login(String username, final String password) {
 		ParseUser.logInInBackground(username, password, new LogInCallback() {
 
@@ -27,6 +35,11 @@ public class ApiLogin extends BaseApiInterface {
 		});
 	}
 
+	/**
+	 * Returns the ModelSuccessResponse if the String received in function is empty
+	 * Returns the ModelFailureResponse if the String received in function is not empty along with the error message
+	 * @param error
+	 */
 	public void onLogin(String error) {
 		if (apiListener != null) {
 			if (error.equals("")) {

@@ -1,7 +1,5 @@
 package com.example.homework.home;
 
-import android.util.Log;
-
 import com.example.homework.DBFields;
 import com.example.homework.base.BaseApiInterface;
 import com.example.homework.base.ModelFailureResponse;
@@ -14,6 +12,14 @@ import com.parse.SaveCallback;
 
 public class ApiChangePassword extends BaseApiInterface {
 
+	/**
+	 * Function that changes the old password into a new one
+	 * Sets the new password in the database and updates the entry in cloud
+	 * Returns in onResponse() a ModelSuccessResponse for success and a ModelFailureResponse otherwise
+	 * 
+	 * @param oldPassword
+	 * @param newPassword
+	 */
 	final void p_changePassword(final String oldPassword,
 			final String newPassword) {
 
@@ -29,8 +35,6 @@ public class ApiChangePassword extends BaseApiInterface {
 					public void done(ParseException e) {
 						if (e == null) {
 							DBFields.pass = newPassword;
-							Log.i("ajunge in done", newPassword + " "
-									+ DBFields.pass);
 							apiListener.onResponse(new ModelSuccessResponse());
 						} else {
 							if (apiListener != null) {

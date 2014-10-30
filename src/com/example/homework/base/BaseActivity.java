@@ -47,12 +47,20 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		}
 	}
 
+	/**
+	 *used to provide an action for the view based on controller's response
+	 * 
+	 */
 	@Override
 	public void onResponse(BaseModel model) {
 		// TODO Auto-generated method stub
 
 	}
 
+	
+	/**
+	 * Implementation for the application states(life cycles)
+	 */
 	@Override
 	protected void onPause() {
 		super.onPause();
@@ -65,6 +73,14 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		setApiInterfacesListener(this);
 	}
 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+
+	}
+	
+	
 	// *displays a dialog box with a given message */
 	public void showErrorDialog(final String text) {
 		if (!TextUtils.isEmpty(text)) {
@@ -87,13 +103,8 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		showErrorDialog(getString(R.string.noInternet));
 	}
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onCreate(savedInstanceState);
-
-	}
-
+	
+	/** check for internet connection */
 	public boolean checkInternet() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni = cm.getActiveNetworkInfo();

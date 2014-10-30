@@ -30,10 +30,11 @@ public class ActivityLogin extends BaseActivity {
 		etPassword = (EditText) findViewById(R.id.et_password);
 		btnLogin = (Button) findViewById(R.id.btn_login);
 
-		api.setApiListener(this);
+		api.setApiListener(this); // adds the login controller to the set of APIs
 		
 		btnLogin.setOnClickListener(new OnClickListener() {
 
+			//checks for internet and allows the press of the button only once
 			@Override
 			public void onClick(View v) {
 				if (checkInternet() == false) {
@@ -47,6 +48,10 @@ public class ActivityLogin extends BaseActivity {
 		});
 	}
 
+	//if internet connection is detected(see above)
+	//disables the button, stores the username and password in two strings and checks the input
+	//if ok => goes to login function in controller
+	//else reenables the button so the user could try another credentials
 	public void onLoginPressed() {
 		btnLogin.setEnabled(false);
 		String username = getUsername();
@@ -68,6 +73,7 @@ public class ActivityLogin extends BaseActivity {
 		}
 	}
 
+	//getters for getting the input in the editTexts
 	private String getUsername() {
 		return etUsername.getText().toString();
 	}
@@ -76,6 +82,8 @@ public class ActivityLogin extends BaseActivity {
 		return etPassword.getText().toString();
 	}
 
+	//if login successfull, finishes this activity and launches the homescreen
+	//if login failes, reenables the button and sets the editTexts to empty state
 	public void onResponse(BaseModel model) {
 		if (model instanceof ModelSuccessResponse) {
 			btnLogin.setEnabled(false);

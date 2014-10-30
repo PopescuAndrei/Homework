@@ -1,5 +1,6 @@
 package com.example.homework.register;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,6 +14,7 @@ import com.example.homework.base.BaseActivity;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
+import com.example.homework.login.ActivityLogin;
 
 public class ActivityRegister extends BaseActivity {
 
@@ -30,10 +32,13 @@ public class ActivityRegister extends BaseActivity {
 		etEmail = (EditText) findViewById(R.id.et_email);
 		registerBtn = (Button) findViewById(R.id.btn_register);
 
-		api.setApiListener(this);
+		api.setApiListener(this); // adds the controller in the API set
 
 		registerBtn.setOnClickListener(new OnClickListener() {
 
+			
+			//if internet is detected it launches onRegisterPressed()
+			//else it displays conneciton error
 			@Override
 			public void onClick(View v) {
 				if (checkInternet() == false) {
@@ -46,6 +51,12 @@ public class ActivityRegister extends BaseActivity {
 		});
 	}
 
+	
+	/**
+	 * checks if the user's input is valid
+	 * disables/enables the register button
+	 * if all data is valid => launches the register function in the controller
+	 */
 	public void onRegisterPressed() {
 		registerBtn.setEnabled(false);
 		String username = getUsername();
@@ -71,6 +82,8 @@ public class ActivityRegister extends BaseActivity {
 		}
 	}
 
+	
+	//getters for edittexts input
 	private String getUsername() {
 		return etUsername.getText().toString();
 	}
@@ -83,11 +96,16 @@ public class ActivityRegister extends BaseActivity {
 		return etEmail.getText().toString();
 	}
 
+	
+	
+	//registers the user if successfull response from the controller,displays a toats,finishes the activity,launches another
+	//if response is unseccessfull show an error and resets the edit texts
 	public void onResponse(BaseModel model) {
 		if (model instanceof ModelSuccessResponse) {
 			registerBtn.setEnabled(false);
 			Toast.makeText(getApplicationContext(),
 					"Account Successfully Created", Toast.LENGTH_LONG).show();
+			startActivity(new Intent(ActivityRegister.this, ActivityLogin.class));
 			finish();
 		} else if (model instanceof ModelFailureResponse) {
 			showErrorDialog("User Already Exists!");

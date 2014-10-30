@@ -14,7 +14,7 @@ import com.example.homework.R;
 import com.example.homework.base.BaseActivity;
 import com.example.homework.login.ActivityLogin;
 import com.parse.ParseUser;
-
+//just initializations and setting click Listeners with actions
 public class ActivityHome extends BaseActivity {
 
 	Button btnBackground, btnSettings, btnLogout;

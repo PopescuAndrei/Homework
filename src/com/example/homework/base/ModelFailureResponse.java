@@ -1,5 +1,6 @@
 package com.example.homework.base;
 
+/** failure response */
 public class ModelFailureResponse extends BaseModel {
 	private String description;
 

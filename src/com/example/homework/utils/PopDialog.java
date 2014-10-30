@@ -9,6 +9,7 @@ import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
 import android.content.DialogInterface.OnDismissListener;
 
+//helper class for displaying various types of dialog
 public class PopDialog {
 
 	public static final int TYPE_OK = 1;

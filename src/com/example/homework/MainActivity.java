@@ -9,7 +9,12 @@ import android.widget.Button;
 import com.example.homework.base.BaseActivity;
 import com.example.homework.login.ActivityLogin;
 import com.example.homework.register.ActivityRegister;
-
+/**
+ * First Activity
+ * initialization of buttons and actions
+ * @author Andrei
+ *
+ */
 public class MainActivity extends BaseActivity {
 
 	Button btnLogin, btnRegister;

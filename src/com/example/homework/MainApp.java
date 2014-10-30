@@ -3,7 +3,11 @@ package com.example.homework;
 import android.app.Application;
 
 import com.parse.Parse;
-
+/**
+ * initialization of the Parse database
+ * @author Andrei
+ *
+ */
 public class MainApp extends Application {
 
 	@Override

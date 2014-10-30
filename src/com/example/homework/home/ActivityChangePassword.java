@@ -31,22 +31,23 @@ public class ActivityChangePassword extends BaseActivity {
 		newPassConfirmEt = (EditText) findViewById(R.id.newPassConfirmEt);
 		changePassBtn = (Button) findViewById(R.id.changePasswordBtn);
 
-		addApiInterface(api);
+		addApiInterface(api); //adds the controller for changing passwords in the api list
 		changePassBtn.setOnClickListener(new OnClickListener() {
 
+			//checks for password fields input and launches the change password function
 			@Override
 			public void onClick(View v) {
 				if (!oldPassEt.getEditableText().toString()
 						.equals(DBFields.pass)) {
 					Toast.makeText(getApplicationContext(),
-							"Old pass not good", Toast.LENGTH_LONG).show();
+							"Wrong password", Toast.LENGTH_LONG).show();
 				} else if (newPassEt.getEditableText().toString().length() < 8) {
 					Toast.makeText(getApplicationContext(),
-							"password too short", Toast.LENGTH_LONG).show();
+							"The new password should be at least 8 characters long", Toast.LENGTH_LONG).show();
 				} else if (!newPassEt.getEditableText().toString()
 						.equals(newPassConfirmEt.getEditableText().toString())) {
 					Toast.makeText(getApplicationContext(),
-							"passwords do not match", Toast.LENGTH_LONG).show();
+							"Passwords do not match", Toast.LENGTH_LONG).show();
 				} else {
 					api.p_changePassword(
 							oldPassEt.getEditableText().toString(), newPassEt
@@ -57,6 +58,9 @@ public class ActivityChangePassword extends BaseActivity {
 		});
 	}
 
+	
+	//displays success if controller changes the password succesfully
+	//displays an error if not
 	public void onResponse(BaseModel model) {
 		if (model instanceof ModelSuccessResponse) {
 			Toast.makeText(getApplicationContext(),
