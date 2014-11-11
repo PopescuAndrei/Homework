@@ -23,6 +23,7 @@
     <string name="btnSettings">Settings</string>
     <string name="btnChangeBack">Change Background</string>
     <string name="btnLogout">Logout</string>
+    <string name="time" formatted="false"><![CDATA[<b>%02d</b>:%02d]]></string>
 
     <!-- Settings -->
     <string name="hint_register_w_mail_second_name">Username:</string>
@@ -31,7 +32,9 @@
     <string name="btn_account_change_password">Change your password</string>
     <string name="hint_old_password">Old password:</string>
     <string name="hint_new_password">New password:</string>
-    <string name="hint_new_password_again">Confirm password:</string><!-- Fragment -->
+    <string name="hint_new_password_again">Confirm password:</string>
+    <string name="hint_change_age">Age:</string>
+    <string name="hint_change_car">Car:</string>
     <string name="ok">Ok</string>
 
 </resources>

@@ -50,12 +50,15 @@ public class ApiChangePassword extends BaseApiInterface {
 		});
 	}
 
-	public void p_save(final String newUsername) {
+	public void p_save(final String newUsername, final String age,
+			final String car) {
 		ParseQuery<ParseUser> query = ParseUser.getQuery();
 		ParseUser user = ParseUser.getCurrentUser();
 		query.getInBackground(user.getObjectId(), new GetCallback<ParseUser>() {
 			public void done(ParseUser object, ParseException e) {
 				object.setUsername(newUsername);
+				object.put("age", age);
+				object.put("car", car);
 				object.saveInBackground(new SaveCallback() {
 
 					@Override

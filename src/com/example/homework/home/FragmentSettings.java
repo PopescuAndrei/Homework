@@ -16,11 +16,12 @@ import com.example.homework.base.BaseFragment;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
+import com.parse.ParseUser;
 
 public class FragmentSettings extends BaseFragment {
 	private Context mContext;
 	private Button btnChangePass, btnSave;
-	private EditText etUsername, etEmail;
+	private EditText etUsername, etEmail, etAge, etCar;
 	private ApiChangePassword api = new ApiChangePassword();
 
 	public FragmentSettings() {
@@ -56,7 +57,7 @@ public class FragmentSettings extends BaseFragment {
 
 			@Override
 			public void onClick(View v) {
-				api.p_save(getUsername());
+				api.p_save(getUsername(), getAge(), getCar());
 
 			}
 		});
@@ -86,10 +87,28 @@ public class FragmentSettings extends BaseFragment {
 		btnChangePass = (Button) view.findViewById(R.id.changePasswordEt);
 		btnSave = (Button) view.findViewById(R.id.salveazaBtn);
 		etUsername = (EditText) view.findViewById(R.id.changeUserNameEt);
+		etAge = (EditText) view.findViewById(R.id.changeAgeEt);
+		etCar = (EditText) view.findViewById(R.id.changeCar);
 		etEmail = (EditText) view.findViewById(R.id.changeMailEt);
+
+		ParseUser user = ParseUser.getCurrentUser();
+		etUsername.setText(user.getUsername());
+		etEmail.setText(user.getEmail());
+		if (user.getString("age") != null)
+			etAge.setText(user.getString("age"));
+		if (user.getString("car") != null)
+			etCar.setText(user.getString("car"));
 	}
 
 	public String getUsername() {
 		return etUsername.getEditableText().toString();
+	}
+
+	public String getAge() {
+		return etAge.getEditableText().toString();
+	}
+
+	public String getCar() {
+		return etCar.getEditableText().toString();
 	}
 }
