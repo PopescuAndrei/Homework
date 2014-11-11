@@ -9,12 +9,12 @@ import android.widget.Toast;
 
 import com.example.homework.DBFields;
 import com.example.homework.R;
-import com.example.homework.base.BaseActivity;
+import com.example.homework.base.BaseFragmentActivity;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
 
-public class ActivityChangePassword extends BaseActivity {
+public class ActivityChangePassword extends BaseFragmentActivity {
 
 	Button changePassBtn;
 	EditText oldPassEt, newPassEt, newPassConfirmEt;
@@ -67,7 +67,7 @@ public class ActivityChangePassword extends BaseActivity {
 					"Password Changed Successfully", Toast.LENGTH_LONG).show();
 			finish();
 		} else if (model instanceof ModelFailureResponse) {
-			showErrorDialog("Username or password incorrect");
+			// showErrorDialog("Username or password incorrect");
 			Toast.makeText(getApplicationContext(),
 					"An error occured.Try again!", Toast.LENGTH_LONG).show();
 		}

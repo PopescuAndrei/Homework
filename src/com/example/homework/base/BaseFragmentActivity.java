@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.homework.R;
-import com.example.homework.utils.PopDialog;
 
 /**
  * API Interface is used for adding / automatic listening to events in APIs
@@ -21,7 +24,7 @@ import com.example.homework.utils.PopDialog;
  * @author Andrei
  * 
  */
-public class BaseActivity extends Activity implements BaseApiListener {
+public class BaseFragmentActivity extends Activity implements BaseApiListener {
 
 	private Handler mainHandler = new Handler();
 	private List<BaseApiInterface> apiInterfaces = new ArrayList<BaseApiInterface>();
@@ -48,7 +51,7 @@ public class BaseActivity extends Activity implements BaseApiListener {
 	}
 
 	/**
-	 *used to provide an action for the view based on controller's response
+	 * used to provide an action for the view based on controller's response
 	 * 
 	 */
 	@Override
@@ -57,7 +60,6 @@ public class BaseActivity extends Activity implements BaseApiListener {
 
 	}
 
-	
 	/**
 	 * Implementation for the application states(life cycles)
 	 */
@@ -79,31 +81,37 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		super.onCreate(savedInstanceState);
 
 	}
-	
-	
-	// *displays a dialog box with a given message */
-	public void showErrorDialog(final String text) {
+
+	protected void showToast(final String text) {
 		if (!TextUtils.isEmpty(text)) {
 			if (Looper.myLooper() == Looper.getMainLooper()) {
-				PopDialog.showDialog(this, "Error", text, null);
+				Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 			} else {
 				mainHandler.post(new Runnable() {
 					@Override
 					public void run() {
-						PopDialog.showDialog(BaseActivity.this, "Error", text,
-								null);
+						Toast.makeText(getApplicationContext(), text,
+								Toast.LENGTH_SHORT).show();
 					}
 				});
 			}
 		}
 	}
 
-	/** show an alert dialog for internet connection failure */
-	protected void showConnectionError() {
-		showErrorDialog(getString(R.string.noInternet));
+	/** displays a dialog box with a given message */
+	protected void showDialogBox(String message) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(message);
+		builder.setCancelable(true);
+		builder.setPositiveButton(getString(R.string.ok),
+				new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+		(builder.create()).show();
 	}
 
-	
 	/** check for internet connection */
 	public boolean checkInternet() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -113,4 +121,5 @@ public class BaseActivity extends Activity implements BaseApiListener {
 		} else
 			return true;
 	}
+
 }

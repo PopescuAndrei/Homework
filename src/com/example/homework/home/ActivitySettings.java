@@ -7,9 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.example.homework.R;
-import com.example.homework.base.BaseActivity;
+import com.example.homework.base.BaseFragmentActivity;
 
-public class ActivitySettings extends BaseActivity {
+public class ActivitySettings extends BaseFragmentActivity {
 
 	Button changePass;
 

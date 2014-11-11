@@ -10,13 +10,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.homework.R;
-import com.example.homework.base.BaseActivity;
+import com.example.homework.base.BaseFragmentActivity;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
-import com.example.homework.login.ActivityLogin;
+import com.example.homework.login.FragmentLogin;
 
-public class ActivityRegister extends BaseActivity {
+public class ActivityRegister extends BaseFragmentActivity {
 
 	Button registerBtn;
 	EditText etUsername, etEmail, etPassword;
@@ -42,7 +42,7 @@ public class ActivityRegister extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				if (checkInternet() == false) {
-					showConnectionError();
+//					showConnectionError();
 				} else {
 					onRegisterPressed();
 				}
@@ -65,13 +65,13 @@ public class ActivityRegister extends BaseActivity {
 		boolean cancel = false;
 
 		if (TextUtils.isEmpty(email)) {
-			showErrorDialog("Please insert a valied email!");
+//			showErrorDialog("Please insert a valied email!");
 			cancel = true;
 		} else if (TextUtils.isEmpty(username)) {
-			showErrorDialog("Please insert a valid username");
+//			showErrorDialog("Please insert a valid username");
 			cancel = true;
 		} else if (password.length() < 8) {
-			showErrorDialog("The password must be at least 8 characters long");
+			// showErrorDialog("The password must be at least 8 characters long");
 			cancel = true;
 		}
 
@@ -105,10 +105,10 @@ public class ActivityRegister extends BaseActivity {
 			registerBtn.setEnabled(false);
 			Toast.makeText(getApplicationContext(),
 					"Account Successfully Created", Toast.LENGTH_LONG).show();
-			startActivity(new Intent(ActivityRegister.this, ActivityLogin.class));
+			startActivity(new Intent(ActivityRegister.this, FragmentLogin.class));
 			finish();
 		} else if (model instanceof ModelFailureResponse) {
-			showErrorDialog("User Already Exists!");
+			// showErrorDialog("User Already Exists!");
 			registerBtn.setEnabled(true);
 			etUsername.setText("");
 			etEmail.setText("");

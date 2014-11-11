@@ -11,11 +11,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.homework.R;
-import com.example.homework.base.BaseActivity;
-import com.example.homework.login.ActivityLogin;
+import com.example.homework.base.BaseFragmentActivity;
+import com.example.homework.login.FragmentLogin;
 import com.parse.ParseUser;
 //just initializations and setting click Listeners with actions
-public class ActivityHome extends BaseActivity {
+public class ActivityHome extends BaseFragmentActivity {
 
 	Button btnBackground, btnSettings, btnLogout;
 	LinearLayout mainLayout;
@@ -60,7 +60,7 @@ public class ActivityHome extends BaseActivity {
 			public void onClick(View v) {
 				ParseUser.logOut();
 				finish();
-				startActivity(new Intent(ActivityHome.this, ActivityLogin.class));
+				startActivity(new Intent(ActivityHome.this, FragmentLogin.class));
 			}
 
 		});
