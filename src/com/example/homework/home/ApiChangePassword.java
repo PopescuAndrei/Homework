@@ -13,9 +13,10 @@ import com.parse.SaveCallback;
 public class ApiChangePassword extends BaseApiInterface {
 
 	/**
-	 * Function that changes the old password into a new one
-	 * Sets the new password in the database and updates the entry in cloud
-	 * Returns in onResponse() a ModelSuccessResponse for success and a ModelFailureResponse otherwise
+	 * Function that changes the old password into a new one Sets the new
+	 * password in the database and updates the entry in cloud Returns in
+	 * onResponse() a ModelSuccessResponse for success and a
+	 * ModelFailureResponse otherwise
 	 * 
 	 * @param oldPassword
 	 * @param newPassword
@@ -35,6 +36,31 @@ public class ApiChangePassword extends BaseApiInterface {
 					public void done(ParseException e) {
 						if (e == null) {
 							DBFields.pass = newPassword;
+							apiListener.onResponse(new ModelSuccessResponse());
+						} else {
+							if (apiListener != null) {
+								apiListener
+										.onResponse(new ModelFailureResponse());
+							}
+						}
+
+					}
+				});
+			}
+		});
+	}
+
+	public void p_save(final String newUsername) {
+		ParseQuery<ParseUser> query = ParseUser.getQuery();
+		ParseUser user = ParseUser.getCurrentUser();
+		query.getInBackground(user.getObjectId(), new GetCallback<ParseUser>() {
+			public void done(ParseUser object, ParseException e) {
+				object.setUsername(newUsername);
+				object.saveInBackground(new SaveCallback() {
+
+					@Override
+					public void done(ParseException e) {
+						if (e == null) {
 							apiListener.onResponse(new ModelSuccessResponse());
 						} else {
 							if (apiListener != null) {

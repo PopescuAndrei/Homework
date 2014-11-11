@@ -11,7 +11,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.homework.R;
 
@@ -24,7 +23,6 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 		super.onActivityCreated(savedInstanceState);
 	}
 
-	private ViewGroup content;
 	private List<BaseApiInterface> apiInterfaces = new ArrayList<BaseApiInterface>();
 
 	/**

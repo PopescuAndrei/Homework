@@ -66,7 +66,7 @@ public class FragmentLogin extends BaseFragment {
 			Bundle savedInstanceState) {
 		SCREEN_TITLE = "Login";
 		mContext = getActivity();
-		return inflater.inflate(R.layout.activity_login, parent, false);
+		return inflater.inflate(R.layout.fragment_login, parent, false);
 	}
 
 	/*
@@ -82,7 +82,7 @@ public class FragmentLogin extends BaseFragment {
 		boolean cancel = false;
 
 		if (TextUtils.isEmpty(username)) {
-			this.showDialogBox("Please insert a username");
+			showDialogBox("Please insert a username");
 			cancel = true;
 		} else if (password.length() < 8) {
 			showDialogBox("Password must be at least 8 characters long");

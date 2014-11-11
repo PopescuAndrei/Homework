@@ -13,7 +13,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.homework.R;
@@ -82,7 +81,7 @@ public class BaseFragmentActivity extends Activity implements BaseApiListener {
 
 	}
 
-	protected void showToast(final String text) {
+	public void showToast(final String text) {
 		if (!TextUtils.isEmpty(text)) {
 			if (Looper.myLooper() == Looper.getMainLooper()) {
 				Toast.makeText(this, text, Toast.LENGTH_SHORT).show();

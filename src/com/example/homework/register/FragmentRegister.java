@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.example.homework.R;
 import com.example.homework.base.BaseFragment;
+import com.example.homework.base.BaseFragmentActivity;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.base.ModelSuccessResponse;
@@ -22,7 +23,7 @@ public class FragmentRegister extends BaseFragment {
 	private Button btnRegister;
 	private EditText etUsername, etEmail, etPassword;
 	private ApiRegister api = new ApiRegister();
-	private Context mContext;
+	private Context mContext;  
 
 	public FragmentRegister() {
 	}
@@ -62,7 +63,7 @@ public class FragmentRegister extends BaseFragment {
 			Bundle savedInstanceState) {
 		SCREEN_TITLE = "Register";
 		mContext = getActivity();
-		return inflater.inflate(R.layout.activity_register, parent, false);
+		return inflater.inflate(R.layout.fragment_register, parent, false);
 	}
 
 	/*
@@ -116,11 +117,14 @@ public class FragmentRegister extends BaseFragment {
 		if (model instanceof ModelSuccessResponse) {
 			btnRegister.setEnabled(false);
 			android.app.FragmentManager fm = getActivity().getFragmentManager();
+			((BaseFragmentActivity) getActivity())
+					.showToast("User Succesfully signed up. Logging in...");
 			fm.popBackStack("activity",
 					FragmentManager.POP_BACK_STACK_INCLUSIVE);
 			api.onRegisterSuccess(getUsername(), getPassword(), getActivity());
 		} else if (model instanceof ModelFailureResponse) {
-			// showErrorDialog("User Already Exists!");
+			((BaseFragmentActivity) getActivity())
+					.showToast("User already exists");
 			btnRegister.setEnabled(true);
 			etUsername.setText("");
 			etEmail.setText("");
