@@ -13,8 +13,15 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
 public class OpenWeatherMapClient implements WeatherDataSource {
+	// the first part of the link from which we obtain the json response
 	private static final String BASE_URL = "http://api.openweathermap.org/data/2.5/";
 
+	/**
+	 * gets the current weather condition based on location adds to the BASE_URL
+	 * the "weather" string for specifing which kind of information we want and
+	 * sends the longitude and latitude parameters Performs a GETRequest and
+	 * obtains a JSON Response
+	 */
 	@Override
 	public void getCurrentCondition(Location location,
 			final Callback<WeatherCondition> callback) {
@@ -50,6 +57,7 @@ public class OpenWeatherMapClient implements WeatherDataSource {
 		throw new UnsupportedOperationException();
 	}
 
+	/** this is where the parsing of the JSON Object is made */
 	private WeatherCondition parseWeatherJson(JSONObject object) {
 		WeatherCondition condition = new WeatherCondition();
 
@@ -75,6 +83,7 @@ public class OpenWeatherMapClient implements WeatherDataSource {
 		return condition;
 	}
 
+	/** this is for setting the type of the condition for chosing a pic later */
 	private WeatherCondition.ConditionType getConditionType(String iconName) {
 		if (iconName.startsWith("01")) {
 			return WeatherCondition.ConditionType.CLEAR;

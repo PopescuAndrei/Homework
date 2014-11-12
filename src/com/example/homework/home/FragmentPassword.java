@@ -89,6 +89,7 @@ public class FragmentPassword extends BaseFragment {
 		changePassBtn = (Button) view.findViewById(R.id.changePasswordBtn);
 	}
 
+	/** checks the input for password and calls the change password method */
 	public void onChangePassClicked() {
 		if (!oldPassEt.getEditableText().toString().equals(DBFields.pass)) {
 			Toast.makeText(mContext.getApplicationContext(), "Wrong password",
@@ -111,6 +112,6 @@ public class FragmentPassword extends BaseFragment {
 	@Override
 	protected void onAfterStart() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

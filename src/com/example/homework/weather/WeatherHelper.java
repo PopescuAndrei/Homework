@@ -1,7 +1,11 @@
 package com.example.homework.weather;
 
 import com.example.homework.R;
-
+/**
+ * Helper for setting the pic based on weather type
+ * @author Andrei
+ *
+ */
 public class WeatherHelper {
     public static int getIconForCondition(WeatherCondition weatherCondition) {
         switch (weatherCondition.getType()) {

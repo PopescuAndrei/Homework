@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.homework.base.BaseModel;
-
+/**
+ * Model for the list of links
+ * @author Andrei
+ *
+ */
 public class ModelList extends BaseModel {
 
 	List<ModelLink> linkList;

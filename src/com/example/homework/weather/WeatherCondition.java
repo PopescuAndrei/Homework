@@ -1,7 +1,11 @@
 package com.example.homework.weather;
 
 import java.util.Date;
-
+/**
+ * Model for the weather condition with getters and setters
+ * @author Andrei
+ *
+ */
 public class WeatherCondition {
 	public static enum ConditionType {
 		CLEAR, FEW_CLOUDS, CLOUDS, MIST, SHOWER, RAIN, STORM, SNOW

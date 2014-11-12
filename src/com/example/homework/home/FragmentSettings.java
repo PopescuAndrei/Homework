@@ -2,13 +2,13 @@ package com.example.homework.home;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.homework.MainActivity;
 import com.example.homework.R;
@@ -74,9 +74,8 @@ public class FragmentSettings extends BaseFragment {
 	@Override
 	public void onResponse(BaseModel model) {
 		if (model instanceof ModelSuccessResponse) {
-			android.app.FragmentManager fm = getActivity().getFragmentManager();
-			fm.popBackStack("activity",
-					FragmentManager.POP_BACK_STACK_INCLUSIVE);
+			Toast.makeText(getActivity(), "Changes saved successfully",
+					Toast.LENGTH_LONG).show();
 		} else if (model instanceof ModelFailureResponse) {
 			showDialogBox("Changes not saved successfully");
 		}
@@ -94,6 +93,7 @@ public class FragmentSettings extends BaseFragment {
 		ParseUser user = ParseUser.getCurrentUser();
 		etUsername.setText(user.getUsername());
 		etEmail.setText(user.getEmail());
+		etEmail.setEnabled(false);
 		if (user.getString("age") != null)
 			etAge.setText(user.getString("age"));
 		if (user.getString("car") != null)
@@ -115,6 +115,6 @@ public class FragmentSettings extends BaseFragment {
 	@Override
 	protected void onAfterStart() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

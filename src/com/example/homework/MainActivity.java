@@ -11,14 +11,16 @@ import com.example.homework.home.FragmentPassword;
 import com.example.homework.home.FragmentSettings;
 import com.example.homework.login.FragmentLogin;
 import com.example.homework.register.FragmentRegister;
+import com.example.homework.utils.ScreenListener;
 
 /**
- * First Activity initialization of buttons and actions
+ * Main Activity used just as a container for the fragments
  * 
  * @author Andrei
  * 
  */
-public class MainActivity extends BaseFragmentActivity {
+public class MainActivity extends BaseFragmentActivity implements
+		ScreenListener {
 
 	private TextView tvTitle;
 	private FragmentMain fragmentMain;
@@ -233,6 +235,10 @@ public class MainActivity extends BaseFragmentActivity {
 		}
 	}
 
+	/**
+	 * if the current fragment is login, when pressing back, do not go back to
+	 * the main layout which is empty
+	 */
 	@Override
 	public void onBackPressed() {
 		Fragment currentFrag = getFragmentManager().findFragmentById(
@@ -241,5 +247,10 @@ public class MainActivity extends BaseFragmentActivity {
 			super.onBackPressed();
 		else
 			finish();
+	}
+
+	/** sets navigation title */
+	public void onScreenChanged(String screenTitle) {
+		setNavTitle(screenTitle);
 	}
 }

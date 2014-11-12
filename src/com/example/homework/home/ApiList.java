@@ -14,6 +14,7 @@ import com.parse.ParseQuery;
 
 public class ApiList extends BaseApiInterface {
 
+	/** function for getting the link list from parse */
 	public void p_getList() {
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("links");
 		query.findInBackground(new FindCallback<ParseObject>() {
@@ -30,22 +31,26 @@ public class ApiList extends BaseApiInterface {
 								"name")));
 					}
 					error = "";
-					p_onGetList(linkList,error);
-				}else{
+					p_onGetList(linkList, error);
+				} else {
 					error = e.getMessage();
-					p_onGetList(linkList,error);
+					p_onGetList(linkList, error);
 				}
 			}
 		});
 	}
-	
-	public void p_onGetList(List<ModelLink> linkList,String error){
-		if(apiListener!=null){
-			if(linkList.size()!=0){
+
+	/**
+	 * function for sending the list or the failure of getting the list in the
+	 * fragment
+	 */
+	public void p_onGetList(List<ModelLink> linkList, String error) {
+		if (apiListener != null) {
+			if (linkList.size() != 0) {
 				ModelList linkListModel = new ModelList();
 				linkListModel.linkList = linkList;
 				apiListener.onResponse(linkListModel);
-			}else if (linkList.size()==0){
+			} else if (linkList.size() == 0) {
 				ModelFailureResponse modelFailureResponse = new ModelFailureResponse();
 				modelFailureResponse.setDescription(error);
 				apiListener.onResponse(modelFailureResponse);

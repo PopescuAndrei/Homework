@@ -3,7 +3,11 @@ package com.example.homework.home;
 import android.net.Uri;
 
 import com.example.homework.base.BaseModel;
-
+/**
+ * The model associated to the Links in parse
+ * @author Andrei
+ *
+ */
 public class ModelLink extends BaseModel {
 
 	private Uri link;

@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -91,6 +92,8 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 			@Override
 			public void onClick(View v) {
 				ParseUser.logOut();
+				FragmentManager fm = getFragmentManager();
+				fm.popBackStack();
 
 			}
 		});
@@ -168,6 +171,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 
 	}
 
+	/** function for updating the weather */
 	private void updateWeatherCondition() {
 		WeatherDataSource dataSource = new OpenWeatherMapClient();
 
@@ -188,6 +192,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 				});
 	}
 
+	/** function for rendering the condition(the pic and the temperature */
 	private void renderWeatherCondition(View v) {
 		viewSwitcher.setDisplayedChild(1);
 		tvCurrentWeather.setText(String.format("%.0f",
@@ -200,6 +205,8 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 	@Override
 	public void onStart() {
 		super.onStart();
+
+		onTimeChanged();
 		if (lastLocation == null) {
 			locationClient.connect();
 		}
@@ -212,6 +219,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		super.onStop();
 	}
 
+	/** function for setting the time text view */
 	protected void onTimeChanged() {
 		Calendar c = Calendar.getInstance();
 		tvTime.setText(Html.fromHtml(getString(R.string.time,

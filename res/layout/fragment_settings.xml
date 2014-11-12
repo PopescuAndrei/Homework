@@ -70,7 +70,7 @@
             android:ems="20"
             android:focusableInTouchMode="true"
             android:hint="@string/hint_change_car"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingTop="10dp" />
 
         <Button

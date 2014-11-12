@@ -12,11 +12,13 @@ import android.widget.TextView;
 
 import com.example.homework.R;
 
+/** adapter for the links list */
 public class AdapterLinks extends BaseAdapter {
 
 	List<ModelLink> linkList = new ArrayList<ModelLink>();
 	Context context;
 
+	/** constructors */
 	public AdapterLinks() {
 	}
 
@@ -29,6 +31,7 @@ public class AdapterLinks extends BaseAdapter {
 		this.context = context;
 	}
 
+	/** function to return number of elements in list */
 	@Override
 	public int getCount() {
 		if (linkList != null)
@@ -37,6 +40,7 @@ public class AdapterLinks extends BaseAdapter {
 			return 0;
 	}
 
+	/** get the element in a specific position */
 	@Override
 	public Object getItem(int position) {
 
@@ -52,11 +56,13 @@ public class AdapterLinks extends BaseAdapter {
 		return 0;
 	}
 
+	/** set the list in the listview and notify the adapter on change */
 	public void setItems(List<ModelLink> items) {
 		linkList = items;
 		notifyDataSetChanged();
 	}
 
+	/** creates the row layout for the links */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
@@ -79,6 +85,7 @@ public class AdapterLinks extends BaseAdapter {
 		return convertView;
 	}
 
+	/** holder for the row layout elements */
 	final class Holder {
 		TextView tvLinkName;
 	}
