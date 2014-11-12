@@ -107,4 +107,10 @@ public class FragmentPassword extends BaseFragment {
 		}
 
 	}
+
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
+		
+	}
 }

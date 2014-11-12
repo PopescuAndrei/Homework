@@ -23,7 +23,7 @@ public class FragmentRegister extends BaseFragment {
 	private Button btnRegister;
 	private EditText etUsername, etEmail, etPassword;
 	private ApiRegister api = new ApiRegister();
-	private Context mContext;  
+	private Context mContext;
 
 	public FragmentRegister() {
 	}
@@ -138,6 +138,12 @@ public class FragmentRegister extends BaseFragment {
 		etPassword = (EditText) view.findViewById(R.id.et_password);
 		etEmail = (EditText) view.findViewById(R.id.et_email);
 		btnRegister = (Button) view.findViewById(R.id.btn_register);
+
+	}
+
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
 
 	}
 }

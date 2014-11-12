@@ -71,4 +71,10 @@ public class FragmentMain extends BaseFragment {
 
 	}
 
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

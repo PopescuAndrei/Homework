@@ -1,15 +1,21 @@
 package com.example.homework.home;
 
 import java.util.Calendar;
+import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -22,6 +28,7 @@ import com.example.homework.MainActivity;
 import com.example.homework.R;
 import com.example.homework.base.BaseFragment;
 import com.example.homework.base.BaseModel;
+import com.example.homework.base.ModelFailureResponse;
 import com.example.homework.weather.OpenWeatherMapClient;
 import com.example.homework.weather.WeatherCondition;
 import com.example.homework.weather.WeatherDataSource;
@@ -47,8 +54,12 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 	private WeatherCondition weatherCondition;
 	private Location lastLocation;
 	private View view;
+	private ApiList api = new ApiList();
+	private AdapterLinks adapter;
+	private List<ModelLink> linkList;
 
 	public FragmentHome() {
+		addApiInterface(api);
 	}
 
 	public static FragmentHome newInstance() {
@@ -97,7 +108,14 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 
 	@Override
 	public void onResponse(BaseModel model) {
+		if (model instanceof ModelList) {
+			linkList = ((ModelList) model).linkList;
+			adapter.setItems(linkList);
 
+		} else if (model instanceof ModelFailureResponse) {
+			Log.i("add child failure",
+					((ModelFailureResponse) model).getDescription());
+		}
 	}
 
 	@Override
@@ -109,9 +127,20 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		mainLayout = (RelativeLayout) view
 				.findViewById(R.id.fragment_container);
 		linkListView = (ListView) view.findViewById(R.id.linkList);
-
 		viewSwitcher = (ViewSwitcher) view.findViewById(R.id.weatherSwitcher);
 
+		linkListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(linkList.get(position).getLink());
+				startActivity(i);
+			}
+
+		});
+		linkListView.setAdapter(adapter);
 	}
 
 	@Override
@@ -171,7 +200,6 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 	@Override
 	public void onStart() {
 		super.onStart();
-
 		if (lastLocation == null) {
 			locationClient.connect();
 		}
@@ -189,4 +217,17 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		tvTime.setText(Html.fromHtml(getString(R.string.time,
 				c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE))));
 	}
+
+	@Override
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		adapter = new AdapterLinks(activity);
+	}
+
+	@Override
+	protected void onAfterStart() {
+		api.p_getList();
+
+	}
+
 }

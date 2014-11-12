@@ -327,7 +327,7 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f010010;
     }
     public static final class color {
-        public static final int background_gray=0x7f06001a;
+        public static final int background_gray=0x7f06001b;
         public static final int common_action_bar_splitter=0x7f060009;
         /**  Sign-in Button Colors 
          */
@@ -340,10 +340,11 @@ containing a value of this type.
         public static final int common_signin_btn_light_text_disabled=0x7f060006;
         public static final int common_signin_btn_light_text_focused=0x7f060007;
         public static final int common_signin_btn_light_text_pressed=0x7f060005;
-        public static final int common_signin_btn_text_dark=0x7f06001c;
-        public static final int common_signin_btn_text_light=0x7f06001d;
-        public static final int edit_text_background=0x7f06001b;
-        public static final int gray=0x7f060018;
+        public static final int common_signin_btn_text_dark=0x7f06001d;
+        public static final int common_signin_btn_text_light=0x7f06001e;
+        public static final int darkerGreen=0x7f060018;
+        public static final int edit_text_background=0x7f06001c;
+        public static final int gray=0x7f060019;
         public static final int green=0x7f060017;
         public static final int wallet_bright_foreground_disabled_holo_light=0x7f06000f;
         /** 
@@ -363,9 +364,9 @@ containing a value of this type.
         public static final int wallet_hint_foreground_holo_light=0x7f060011;
         public static final int wallet_holo_blue_light=0x7f060015;
         public static final int wallet_link_text_light=0x7f060016;
-        public static final int wallet_primary_text_holo_light=0x7f06001e;
-        public static final int wallet_secondary_text_holo_dark=0x7f06001f;
-        public static final int white=0x7f060019;
+        public static final int wallet_primary_text_holo_light=0x7f06001f;
+        public static final int wallet_secondary_text_holo_dark=0x7f060020;
+        public static final int white=0x7f06001a;
     }
     public static final class dimen {
         /**  general dimensions 
@@ -429,7 +430,7 @@ containing a value of this type.
         public static final int rounded_edittext=0x7f020034;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f070033;
+        public static final int RelativeLayout1=0x7f070036;
         public static final int book_now=0x7f070010;
         public static final int btnLoginLink=0x7f070024;
         public static final int btnRegisterLink=0x7f070026;
@@ -458,6 +459,7 @@ containing a value of this type.
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
+        public static final int layout_row_link=0x7f070034;
         public static final int linkList=0x7f07001c;
         public static final int match_parent=0x7f07000c;
         public static final int monochrome=0x7f070013;
@@ -476,11 +478,13 @@ containing a value of this type.
         public static final int strict_sandbox=0x7f070009;
         public static final int terrain=0x7f070003;
         public static final int tvCurrentWeather=0x7f07001b;
+        public static final int tvLinkName=0x7f070035;
         public static final int tvOr=0x7f070025;
         public static final int tvTime=0x7f070018;
         public static final int tvWelcome=0x7f070022;
-        public static final int tv_navbar_title=0x7f070034;
+        public static final int tv_navbar_title=0x7f070037;
         public static final int weatherSwitcher=0x7f070019;
+        public static final int webView=0x7f070033;
         public static final int wrap_content=0x7f07000d;
     }
     public static final class integer {
@@ -494,7 +498,9 @@ containing a value of this type.
         public static final int fragment_password=0x7f030004;
         public static final int fragment_register=0x7f030005;
         public static final int fragment_settings=0x7f030006;
-        public static final int view_navbar=0x7f030007;
+        public static final int fragment_webview=0x7f030007;
+        public static final int row_link=0x7f030008;
+        public static final int view_navbar=0x7f030009;
     }
     public static final class string {
         public static final int accept=0x7f050002;

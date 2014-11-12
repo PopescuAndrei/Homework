@@ -130,4 +130,10 @@ public class FragmentLogin extends BaseFragment {
 		btnLogin = (Button) view.findViewById(R.id.btn_login);
 
 	}
+
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
+		
+	}
 }

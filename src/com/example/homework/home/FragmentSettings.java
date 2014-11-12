@@ -111,4 +111,10 @@ public class FragmentSettings extends BaseFragment {
 	public String getCar() {
 		return etCar.getEditableText().toString();
 	}
+
+	@Override
+	protected void onAfterStart() {
+		// TODO Auto-generated method stub
+		
+	}
 }

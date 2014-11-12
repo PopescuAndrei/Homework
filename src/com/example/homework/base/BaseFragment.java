@@ -57,6 +57,7 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 	public void onResume() {
 		super.onResume();
 		setApiInterfacesListener(this);
+		onAfterStart();
 	}
 
 	@Override
@@ -100,4 +101,6 @@ public abstract class BaseFragment extends Fragment implements BaseApiListener {
 		} else
 			return true;
 	}
+
+	protected abstract void onAfterStart();
 }
