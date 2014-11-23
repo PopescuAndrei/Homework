@@ -52,6 +52,10 @@
             android:name="com.example.homework.home.ActivityChangePassword"
             android:screenOrientation="portrait" >
         </activity>
+        <activity
+            android:name="com.example.homework.feeds.FeedsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>

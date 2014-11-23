@@ -19,17 +19,17 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import com.example.homework.DBFields;
 import com.example.homework.MainActivity;
 import com.example.homework.R;
 import com.example.homework.base.BaseFragment;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
+import com.example.homework.feeds.FeedsActivity;
 import com.example.homework.weather.OpenWeatherMapClient;
 import com.example.homework.weather.WeatherCondition;
 import com.example.homework.weather.WeatherDataSource;
@@ -45,11 +45,9 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		GooglePlayServicesClient.OnConnectionFailedListener {
 
 	private Context mContext;
-	private Button btnBackground, btnSettings, btnLogout;
-	private RelativeLayout mainLayout;
+	private Button btnFeeds, btnSettings, btnLogout;
 	private ViewSwitcher viewSwitcher;
 	private TextView tvCurrentWeather, tvTime;
-	private ProgressBar galleryProgress;
 	private ListView linkListView;
 	private LocationClient locationClient;
 	private WeatherCondition weatherCondition;
@@ -71,6 +69,9 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		locationClient = new LocationClient(getActivity(), this, this);
+		DBFields.politics=true;
+		DBFields.music=true;
+		DBFields.movies = true;
 	}
 
 	@Override
@@ -127,8 +128,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		btnLogout = (Button) view.findViewById(R.id.btn_logout);
 		tvCurrentWeather = (TextView) view.findViewById(R.id.tvCurrentWeather);
 		tvTime = (TextView) view.findViewById(R.id.tvTime);
-		mainLayout = (RelativeLayout) view
-				.findViewById(R.id.fragment_container);
+		btnFeeds = (Button) view.findViewById(R.id.btn_feeds);
 		linkListView = (ListView) view.findViewById(R.id.linkList);
 		viewSwitcher = (ViewSwitcher) view.findViewById(R.id.weatherSwitcher);
 
@@ -144,6 +144,16 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 
 		});
 		linkListView.setAdapter(adapter);
+
+		btnFeeds.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(mContext.getApplicationContext(),
+						FeedsActivity.class));
+
+			}
+		});
 	}
 
 	@Override

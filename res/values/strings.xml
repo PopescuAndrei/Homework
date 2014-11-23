@@ -21,6 +21,7 @@
 
     <!-- Homepage -->
     <string name="btnSettings">Settings</string>
+    <string name="btnFeeds">Feeds</string>
     <string name="btnChangeBack">Change Background</string>
     <string name="btnLogout">Logout</string>
     <string name="time" formatted="false"><![CDATA[<b>%02d</b>:%02d]]></string>
