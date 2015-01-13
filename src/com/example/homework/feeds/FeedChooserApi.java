@@ -16,6 +16,7 @@ public class FeedChooserApi extends BaseApiInterface {
 	boolean bioshock = false;
 	boolean masseffect = false;
 
+	/** saves the input in the database */
 	public void onSaveFeeds(String feed1, String feed2, String feed3) {
 		ParseUser user = ParseUser.getCurrentUser();
 		if (feed1.equals("Ziua Izabellei")) {
@@ -60,6 +61,7 @@ public class FeedChooserApi extends BaseApiInterface {
 		});
 	}
 
+	/** notifies the view of saving success or failure */
 	public void onSaveDone(String error) {
 		if (apiListener != null) {
 			if (error.equals("")) {

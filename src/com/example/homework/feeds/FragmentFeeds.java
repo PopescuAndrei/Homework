@@ -28,6 +28,9 @@ public class FragmentFeeds extends BaseFragment {
 	Button btnActionSecond;
 	Context mContext;
 
+	/**
+	 * Constructors
+	 */
 	public FragmentFeeds() {
 	}
 
@@ -81,6 +84,7 @@ public class FragmentFeeds extends BaseFragment {
 
 	}
 
+	/** Reads the JSON from the assets */
 	public JSONObject parseJSONData() {
 		String jsonString = null;
 		JSONObject jsonObject = null;
@@ -105,18 +109,21 @@ public class FragmentFeeds extends BaseFragment {
 		return jsonObject;
 	}
 
+	/** launches a website */
 	public void launchWebsite(String url) {
 		Intent i = new Intent(Intent.ACTION_VIEW);
 		i.setData(Uri.parse(url));
 		startActivity(i);
 	}
 
+	/** calls someone */
 	public void call(String phone) {
 		Intent callIntent = new Intent(Intent.ACTION_CALL);
 		callIntent.setData(Uri.parse("tel:" + phone));
 		startActivity(callIntent);
 	}
 
+	/** sets the json data according to the user's options */
 	public void setJSONData() {
 
 		ParseUser user = ParseUser.getCurrentUser();

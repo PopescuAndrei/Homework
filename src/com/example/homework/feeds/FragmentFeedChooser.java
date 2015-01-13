@@ -92,6 +92,10 @@ public class FragmentFeedChooser extends BaseFragment {
 
 	}
 
+	/**
+	 * save button action which sends the info to the controller to save the
+	 * clicked options
+	 */
 	public void onSave() {
 		String saved1 = "";
 		String saved2 = "";
