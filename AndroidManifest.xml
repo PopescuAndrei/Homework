@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="14"
+        android:minSdkVersion="17"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -53,7 +53,7 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.example.homework.feeds.FeedsActivity"
+            android:name="com.example.homework.feeds.FeedsFragment"
             android:screenOrientation="portrait" >
         </activity>
     </application>

@@ -430,73 +430,78 @@ containing a value of this type.
         public static final int rounded_edittext=0x7f020034;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f07003a;
+        public static final int RelativeLayout1=0x7f07003f;
         public static final int book_now=0x7f070010;
-        public static final int btnLoginLink=0x7f070028;
-        public static final int btnRegisterLink=0x7f07002a;
-        public static final int btn_accountSettings=0x7f070021;
-        public static final int btn_feeds=0x7f070020;
-        public static final int btn_login=0x7f070025;
-        public static final int btn_logout=0x7f070022;
-        public static final int btn_register=0x7f070030;
+        public static final int btnActionSecond=0x7f07001b;
+        public static final int btnLoginLink=0x7f07002c;
+        public static final int btnRegisterLink=0x7f07002e;
+        public static final int btn_accountSettings=0x7f070025;
+        public static final int btn_feeds=0x7f070024;
+        public static final int btn_login=0x7f070029;
+        public static final int btn_logout=0x7f070026;
+        public static final int btn_register=0x7f070034;
         public static final int buyButton=0x7f07000a;
         public static final int buy_now=0x7f07000f;
         public static final int buy_with_google=0x7f07000e;
-        public static final int changeAgeEt=0x7f070033;
-        public static final int changeCar=0x7f070034;
-        public static final int changeMailEt=0x7f070032;
-        public static final int changePasswordBtn=0x7f07002e;
-        public static final int changePasswordEt=0x7f070035;
-        public static final int changeUserNameEt=0x7f070031;
+        public static final int changeAgeEt=0x7f070037;
+        public static final int changeCar=0x7f070038;
+        public static final int changeInterests=0x7f07003a;
+        public static final int changeMailEt=0x7f070036;
+        public static final int changePasswordBtn=0x7f070032;
+        public static final int changePasswordEt=0x7f070039;
+        public static final int changeUserNameEt=0x7f070035;
         public static final int classic=0x7f070011;
         public static final int content_frame=0x7f070014;
-        public static final int et_email=0x7f07002f;
-        public static final int et_password=0x7f070024;
-        public static final int et_username=0x7f070023;
-        public static final int fragment_container=0x7f07001a;
-        public static final int fragments_container=0x7f070019;
-        public static final int fragments_container1=0x7f070016;
-        public static final int fragments_container2=0x7f070017;
-        public static final int fragments_container3=0x7f070018;
-        public static final int gallery_progress=0x7f07001d;
+        public static final int et_email=0x7f070033;
+        public static final int et_password=0x7f070028;
+        public static final int et_username=0x7f070027;
+        public static final int fragment_container=0x7f07001e;
+        public static final int fragments_container=0x7f070016;
+        public static final int gallery_progress=0x7f070021;
         public static final int grayscale=0x7f070012;
         public static final int holo_dark=0x7f070005;
         public static final int holo_light=0x7f070006;
         public static final int hybrid=0x7f070004;
-        public static final int layout_row_link=0x7f070038;
-        public static final int linkList=0x7f07001f;
+        public static final int layout_row_link=0x7f07003d;
+        public static final int linkList=0x7f070023;
         public static final int match_parent=0x7f07000c;
         public static final int monochrome=0x7f070013;
         public static final int navbar=0x7f070015;
-        public static final int newPassConfirmEt=0x7f07002d;
-        public static final int newPassEt=0x7f07002c;
+        public static final int newPassConfirmEt=0x7f070031;
+        public static final int newPassEt=0x7f070030;
         public static final int none=0x7f070000;
         public static final int normal=0x7f070001;
-        public static final int oldPassEt=0x7f07002b;
+        public static final int oldPassEt=0x7f07002f;
         public static final int production=0x7f070007;
-        public static final int rlOr=0x7f070027;
-        public static final int salveazaBtn=0x7f070036;
+        public static final int rlOr=0x7f07002b;
+        public static final int root_layout=0x7f070017;
+        public static final int salveazaBtn=0x7f07003b;
         public static final int sandbox=0x7f070008;
         public static final int satellite=0x7f070002;
         public static final int selectionDetails=0x7f07000b;
         public static final int strict_sandbox=0x7f070009;
         public static final int terrain=0x7f070003;
-        public static final int tvCurrentWeather=0x7f07001e;
-        public static final int tvLinkName=0x7f070039;
-        public static final int tvOr=0x7f070029;
-        public static final int tvTime=0x7f07001b;
-        public static final int tvWelcome=0x7f070026;
-        public static final int tv_navbar_title=0x7f07003b;
-        public static final int weatherSwitcher=0x7f07001c;
-        public static final int webView=0x7f070037;
+        public static final int tvCurrentWeather=0x7f070022;
+        public static final int tvDescriptionFirst=0x7f070019;
+        public static final int tvDescriptionThird=0x7f07001d;
+        public static final int tvLinkName=0x7f07003e;
+        public static final int tvOr=0x7f07002d;
+        public static final int tvTime=0x7f07001f;
+        public static final int tvTitleFirst=0x7f070018;
+        public static final int tvTitleSecond=0x7f07001a;
+        public static final int tvTitleThird=0x7f07001c;
+        public static final int tvWelcome=0x7f07002a;
+        public static final int tv_navbar_title=0x7f070040;
+        public static final int weatherSwitcher=0x7f070020;
+        public static final int webView=0x7f07003c;
         public static final int wrap_content=0x7f07000d;
     }
     public static final class integer {
         public static final int google_play_services_version=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_feed=0x7f030000;
-        public static final int activity_main=0x7f030001;
+        public static final int activity_main=0x7f030000;
+        public static final int fragment_feed=0x7f030001;
         public static final int fragment_home=0x7f030002;
         public static final int fragment_login=0x7f030003;
         public static final int fragment_main=0x7f030004;
@@ -505,7 +510,8 @@ containing a value of this type.
         public static final int fragment_settings=0x7f030007;
         public static final int fragment_webview=0x7f030008;
         public static final int row_link=0x7f030009;
-        public static final int view_navbar=0x7f03000a;
+        public static final int view_divider=0x7f03000a;
+        public static final int view_navbar=0x7f03000b;
     }
     public static final class string {
         public static final int accept=0x7f050002;
@@ -520,6 +526,7 @@ containing a value of this type.
         public static final int btnSettings=0x7f05002e;
         public static final int btn_account_change_password=0x7f050036;
         public static final int btn_account_save_changes=0x7f050034;
+        public static final int btn_changeInterests=0x7f050037;
         /**   Text for notification shown when the Android Wear apps needs to be updated. Only shown on the wearable. [CHAR LIMIT=NONE] 
          */
         public static final int common_android_wear_notification_needs_update_text=0x7f050009;
@@ -628,17 +635,17 @@ containing a value of this type.
          */
         public static final int et_hint_username=0x7f05002b;
         public static final int hello_world=0x7f050024;
-        public static final int hint_change_age=0x7f05003a;
-        public static final int hint_change_car=0x7f05003b;
+        public static final int hint_change_age=0x7f05003b;
+        public static final int hint_change_car=0x7f05003c;
         public static final int hint_change_mail=0x7f050035;
-        public static final int hint_new_password=0x7f050038;
-        public static final int hint_new_password_again=0x7f050039;
-        public static final int hint_old_password=0x7f050037;
+        public static final int hint_new_password=0x7f050039;
+        public static final int hint_new_password_again=0x7f05003a;
+        public static final int hint_old_password=0x7f050038;
         /**  Settings 
          */
         public static final int hint_register_w_mail_second_name=0x7f050033;
         public static final int noInternet=0x7f050025;
-        public static final int ok=0x7f05003c;
+        public static final int ok=0x7f05003d;
         public static final int store_picture_message=0x7f050001;
         public static final int store_picture_title=0x7f050000;
         /**  Navbar 

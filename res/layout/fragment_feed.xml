@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="true"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="259dp"
+            android:background="#5d3d5f"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTitleFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tempText"
+                android:textColor="@color/white"
+                android:textSize="24sp" >
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/tvDescriptionFirst"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/tempText"
+                android:textColor="@color/white"
+                android:textSize="24sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="259dp"
+            android:background="#2d3d5f"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvTitleSecond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/tempText"
+                android:textColor="@color/white"
+                android:textSize="24sp" >
+            </TextView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/white" />
+
+            <Button
+                android:id="@+id/btnActionSecond"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="@string/tempText"
+                android:textColor="@color/white"
+                android:textSize="24sp" >
+            </Button>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="259dp"
+        android:background="#8AE6B8"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvTitleThird"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/tempText"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/tvDescriptionThird"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:text="@string/tempText"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</LinearLayout>

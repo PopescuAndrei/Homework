@@ -23,13 +23,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
-import com.example.homework.DBFields;
 import com.example.homework.MainActivity;
 import com.example.homework.R;
 import com.example.homework.base.BaseFragment;
 import com.example.homework.base.BaseModel;
 import com.example.homework.base.ModelFailureResponse;
-import com.example.homework.feeds.FeedsActivity;
 import com.example.homework.weather.OpenWeatherMapClient;
 import com.example.homework.weather.WeatherCondition;
 import com.example.homework.weather.WeatherDataSource;
@@ -69,9 +67,6 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		locationClient = new LocationClient(getActivity(), this, this);
-		DBFields.politics=true;
-		DBFields.music=true;
-		DBFields.movies = true;
 	}
 
 	@Override
@@ -149,8 +144,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(mContext.getApplicationContext(),
-						FeedsActivity.class));
+				((MainActivity) getActivity()).launchFeeds();
 
 			}
 		});
