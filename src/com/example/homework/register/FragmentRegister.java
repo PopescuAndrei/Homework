@@ -23,6 +23,7 @@ public class FragmentRegister extends BaseFragment {
 	private Button btnRegister;
 	private EditText etUsername, etEmail, etPassword;
 	private ApiRegister api = new ApiRegister();
+	@SuppressWarnings("unused")
 	private Context mContext;
 
 	public FragmentRegister() {

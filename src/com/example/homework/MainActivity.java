@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.homework.base.BaseFragmentActivity;
+import com.example.homework.feeds.FragmentFeedChooser;
 import com.example.homework.feeds.FragmentFeeds;
 import com.example.homework.home.FragmentHome;
 import com.example.homework.home.FragmentPassword;
@@ -31,6 +32,7 @@ public class MainActivity extends BaseFragmentActivity implements
 	private FragmentSettings fragmentSettings;
 	private FragmentFeeds fragmentFeeds;
 	private FragmentPassword fragmentPassword;
+	private FragmentFeedChooser fragmentFeedsChooser;
 
 	@Override
 	public void onCreate(Bundle arg0) {
@@ -226,7 +228,7 @@ public class MainActivity extends BaseFragmentActivity implements
 
 	}
 
-	/** launch Settings Fragment */
+	/** launch Feeds Fragment */
 	public void launchFeeds() {
 		if (fragmentFeeds == null) {
 			fragmentFeeds = new FragmentFeeds();
@@ -247,6 +249,36 @@ public class MainActivity extends BaseFragmentActivity implements
 				transaction.add(R.id.fragments_container, fragmentFeeds);
 			} else {
 				transaction.show(fragmentFeeds);
+			}
+
+			transaction.addToBackStack(null);
+			transaction.commit();
+
+		}
+
+	}
+
+	/** launch FeedsChooser Fragment */
+	public void launchFeedsChooser() {
+		if (fragmentFeedsChooser == null) {
+			fragmentFeedsChooser = new FragmentFeedChooser();
+		}
+		FragmentTransaction transaction = getFragmentManager()
+				.beginTransaction();
+
+		Fragment currentFrag = getFragmentManager().findFragmentById(
+				R.id.fragments_container);
+
+		if (currentFrag != fragmentFeedsChooser) {
+
+			if (currentFrag != null) {
+				transaction.remove(currentFrag);
+			}
+
+			if (!fragmentFeedsChooser.isAdded()) {
+				transaction.add(R.id.fragments_container, fragmentFeedsChooser);
+			} else {
+				transaction.show(fragmentFeedsChooser);
 			}
 
 			transaction.addToBackStack(null);

@@ -31,6 +31,7 @@
     <string name="btn_account_save_changes">Save Changes</string>
     <string name="hint_change_mail">Email: </string>
     <string name="btn_account_change_password">Change your password</string>
+    <string name="btn_change_feeds">Change Feeds</string>
     <string name="btn_changeInterests">Choose your interests</string>
     <string name="hint_old_password">Old password:</string>
     <string name="hint_new_password">New password:</string>
@@ -38,5 +39,18 @@
     <string name="hint_change_age">Age:</string>
     <string name="hint_change_car">Car:</string>
     <string name="ok">Ok</string>
+
+    <!-- Feed Chooser -->
+    <string name="rZiuaIzabellei">Ziua Izabellei</string>
+    <string name="rMusic">Music</string>
+    <string name="rCall">Call Mom</string>
+    <string name="rAvengers">Age of Ultron</string>
+    <string name="rStarWars">Star Wars</string>
+    <string name="rBioshock">Bioshock</string>
+    <string name="rMassEffect">Mass Effect</string>
+    <string name="tvFeedRandom">Random</string>
+    <string name="tvFeedGames">Games</string>
+    <string name="tvFeedMovies">Movies</string>
+    <string name="btn_saveFeed">Save</string>
 
 </resources>

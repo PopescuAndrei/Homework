@@ -8,9 +8,9 @@
       "description":"none",
       "action":"linkAction"
     },
-    "politics":{
+    "viral":{
       "type":"Button",
-      "label":"Vote",
+      "label":"Ziua Izabellei <3",
       "link":"https://www.facebook.com/events/634769329975030/",
       "description":"none",
       "action":"linkAction"

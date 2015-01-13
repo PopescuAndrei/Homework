@@ -123,12 +123,18 @@ public class FragmentFeeds extends BaseFragment {
 		JSONObject mainObject = parseJSONData();
 		JSONObject object;
 		JSONObject x;
+		tvTitleFirst.setText("No interest selected");
+		tvTitleSecond.setText("No interest selected");
+		tvTitleThird.setText("No interest selected");
+		btnActionSecond.setText("No interest selected");
+		tvDescriptionFirst.setText("No interest selected");
+		tvDescriptionThird.setText("No interest selected");
 		try {
 			object = mainObject.getJSONObject("first");
-			if (user.getBoolean("politics") == true) {
-				x = object.getJSONObject("politics");
-				tvTitleSecond.setText("Politics");
-				btnActionSecond.setText(x.getString("label"));
+			if (user.getBoolean("izabela") == true) {
+				x = object.getJSONObject("viral");
+				tvTitleSecond.setText(x.getString("label"));
+				btnActionSecond.setText("Attend");
 				final String link = x.getString("link");
 				btnActionSecond.setOnClickListener(new OnClickListener() {
 

@@ -16,7 +16,6 @@ import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.example.homework.R;
-import com.example.homework.utils.ScreenListener;
 
 /**
  * API Interface is used for adding / automatic listening to events in APIs

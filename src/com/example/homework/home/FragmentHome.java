@@ -42,6 +42,7 @@ public class FragmentHome extends BaseFragment implements LocationListener,
 		GooglePlayServicesClient.ConnectionCallbacks,
 		GooglePlayServicesClient.OnConnectionFailedListener {
 
+	@SuppressWarnings("unused")
 	private Context mContext;
 	private Button btnFeeds, btnSettings, btnLogout;
 	private ViewSwitcher viewSwitcher;

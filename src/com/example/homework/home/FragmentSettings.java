@@ -19,8 +19,9 @@ import com.example.homework.base.ModelSuccessResponse;
 import com.parse.ParseUser;
 
 public class FragmentSettings extends BaseFragment {
+	@SuppressWarnings("unused")
 	private Context mContext;
-	private Button btnChangePass, btnSave;
+	private Button btnChangePass, btnSave, btnChangeFeeds;
 	private EditText etUsername, etEmail, etAge, etCar;
 	private ApiChangePassword api = new ApiChangePassword();
 
@@ -61,6 +62,15 @@ public class FragmentSettings extends BaseFragment {
 
 			}
 		});
+
+		btnChangeFeeds.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				((MainActivity) getActivity()).launchFeedsChooser();
+
+			}
+		});
 	}
 
 	@Override
@@ -85,6 +95,7 @@ public class FragmentSettings extends BaseFragment {
 	public void initUI(View view) {
 		btnChangePass = (Button) view.findViewById(R.id.changePasswordEt);
 		btnSave = (Button) view.findViewById(R.id.salveazaBtn);
+		btnChangeFeeds = (Button) view.findViewById(R.id.btn_changeFeeds);
 		etUsername = (EditText) view.findViewById(R.id.changeUserNameEt);
 		etAge = (EditText) view.findViewById(R.id.changeAgeEt);
 		etCar = (EditText) view.findViewById(R.id.changeCar);
